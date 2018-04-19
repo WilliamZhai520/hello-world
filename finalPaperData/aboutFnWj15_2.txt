@@ -1,0 +1,23 @@
+ 【ObjectID】数据条目标号
+ 【Fn_ID】对应Fishnet单元格的ID （单元格边长为300m）
+*【FnDEM】Fishnet单元格的平均高程
+-【FnSlope】Fn单元格平均坡度
+-【Fn_RoadDIST】Fn单元格距离道路距离
+-【Fn_WaterDIST】Fn单元格距离河流水域距离
++【FnPop】Fn单元格平均人口密度（单位： 人/平方千米）
++【Fn_NYD】Fn单元格内农用地面积
++【Fn_JZZ】Fn单元格内建制镇类（建设用地）面积
++【Fn_CZ】Fn单元格内村庄类（建设用地）面积
+
++【BF_NYD】Fn单元格1.5km范围内农用地面积 （栅格邻域范围是5*5）
++【BF_JZZ】Fn单元格1.5km范围内建制镇类面积
++【BF_CZ】单元格1.5km范围内村庄类面积
++【BF_JZZ+CZ】单元格1.5Km范围内建制镇类与村庄类面积
++【BF_Pop】单元格1.5km范围内平均人口密度
+
+-【Near_ShopLifeService】Fn单元格距“购物和生活服务”POI距离
+-【Near_Medical】Fn单元格距“医疗保健服务”POI距离
+-【Near_EduSchool】Fn单元格距“学校教育”POI距离
+-【Near_BusStation】Fn单元格距“公交车站”POI距离
+
+其中字段前符号‘+’表示 值越大越有助于好的农居点，‘-’表示值越大越妨碍好的农居点发展。DEM以所有单元格平均均值为最有益值。
