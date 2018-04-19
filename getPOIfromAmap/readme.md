@@ -1,3 +1,7 @@
+Thanks truly to Amap.
+It helps you to get POI of the study area you pick from Amap.
+I use it only for study Python and do spatial analysis.
+
 A getPOI demo(Python 3). 
 1. Change [Yourkey] in the source code to the key you get from Amap Developers.
 2. Change the parameter index in the url for different items or study purposes. Those parameter are all in .xlsx files.
