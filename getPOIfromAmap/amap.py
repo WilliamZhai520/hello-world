@@ -11,7 +11,7 @@ import string
 
 aType=r'&types=141200'       # test and change this.
 aRegion=r'&city=320412'           # Wujin Changzhou
-aKey=r'&key=3eb98effa9dc5ee700e40b7b4f6619bd'
+##aKey=r'&key=???'
 
 file_name='WJ'+aType[-6:]+'.txt'
 
