@@ -4,19 +4,23 @@
 #!/usr/bin/python 
 # -*- coding: utf-8 -*-
 
-
-
 import urllib.request 
 import xml.dom.minidom as minidom  
 import string
 
-file_name='result.txt'                 #write result to this file  
-#url_amap=r'http://restapi.amap.com/v3/place/text?&keyword=&types=141202&city=320412&citylimit=true&&output=xml&offset=20&page=1&key=【Yourkey】&extensions=base'  
-test_type=r'types=141202'       #not factory facilities but test
-region=r'city=320412'               #not beichen of tianjin  but Wujin Changzhou
+
+aType=r'&types=141200'       # test and change this.
+aRegion=r'&city=320412'           # Wujin Changzhou
+aKey=r'&key=3eb98effa9dc5ee700e40b7b4f6619bd'
+
+file_name='WJ'+aType[-6:]+'.txt'
+
+url_amap=r'http://restapi.amap.com/v3/place/text?&keyword=&citylimit=true&output=xml&offset=20&page=1&extensions=base'+aType+aRegion+aKey
+
 each_page_rec=20                    #results that displays in one page  
 which_pach=r'page=1'                #display which page  
 xml_file='tmp.xml'                  #xml filen name
+
 
 #write logs  
 def log2file(file_handle,text_info):  
@@ -55,8 +59,10 @@ def parseXML():
                 for poi in pois[0].getElementsByTagName('poi'):  
                     name=poi.getElementsByTagName("name")[0].childNodes[0].nodeValue  
                     location=poi.getElementsByTagName("location")[0].childNodes[0].nodeValue  
-                    text_info=''+name+','+location+'\n'  
-                    print(text_info)
+                    typecode=poi.getElementsByTagName("typecode")[0].childNodes[0].nodeValue
+                    typeName=poi.getElementsByTagName("type")[0].childNodes[0].nodeValue
+                    text_info=''+name+','+location+','+typecode+','+typeName+'\n'
+                    #print(text_info)
                     #save data record  
                     log2file(file_handle,text_info)
                     # log2file(file_handle,text_info.encode("utf-8"))  
